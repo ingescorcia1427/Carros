@@ -1,5 +1,6 @@
 package com.example.cuc.carros;
 
+import android.content.res.Resources;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ public class AdaptadorCarro extends RecyclerView.Adapter<AdaptadorCarro.CarroVie
     private ArrayList<Carro> carros;
     private OnCarroClickListener clickListener;
 
+
     public AdaptadorCarro(ArrayList<Carro> carros, OnCarroClickListener clickListener) {
         this.carros = carros;
         this.clickListener = clickListener;
@@ -39,6 +41,7 @@ public class AdaptadorCarro extends RecyclerView.Adapter<AdaptadorCarro.CarroVie
 
         holder.nchasis.setText(car.getNchasis());
         holder.marca.setText(car.getMarca());
+        holder.color.setText(car.getColor());
         holder.modelo.setText(car.getModelo());
 
         holder.view.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +51,7 @@ public class AdaptadorCarro extends RecyclerView.Adapter<AdaptadorCarro.CarroVie
             }
         });
     }
+
 
     @Override
     public int getItemCount() {
@@ -69,7 +73,7 @@ public class AdaptadorCarro extends RecyclerView.Adapter<AdaptadorCarro.CarroVie
             foto = (ImageView)itemView.findViewById(R.id.foto);
             nchasis = (TextView)itemView.findViewById(R.id.txtNchasisCar);
             marca = (TextView) itemView.findViewById(R.id.txtMarcaCar);
-            color = (TextView)itemView.findViewById(R.id.txtMarcaCar);
+            color = (TextView)itemView.findViewById(R.id.txtColorCar);
             modelo = (TextView)itemView.findViewById(R.id.txtModeloCar);
         }
     }

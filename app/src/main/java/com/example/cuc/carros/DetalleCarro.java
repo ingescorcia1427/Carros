@@ -32,11 +32,12 @@ public class DetalleCarro extends AppCompatActivity {
         marca = b.getString("marca");
         color = b.getString("color");
         modelo = b.getString("modelo");
+        urlfoto = b.getString("urlfoto");
 
         collapsingToolbarLayout = (CollapsingToolbarLayout)findViewById(R.id.collapsing_toolbar);
-        foto = (ImageView)findViewById(R.id.fotoPersona);
+        foto = (ImageView)findViewById(R.id.fotoCarro);
 
         Picasso.with(getApplicationContext()).load(urlfoto).into(foto);
-        collapsingToolbarLayout.setTitle(marca+" "+modelo);
+        collapsingToolbarLayout.setTitle(marca+" "+modelo + "\n"+color);
     }
 }

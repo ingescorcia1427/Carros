@@ -29,7 +29,7 @@ public class AgregarCarro extends AppCompatActivity {
     private EditText cajaNchasis;
     private Spinner opc_marca, opc_color, opc_modelo;
     private boolean guardado;
-    private TextInputLayout icajaNchasis, icajaMarca, icajaColor, icajaModelo;
+    private TextInputLayout icajaNchasis;
     private String[] opmar, opcol, opmod;
     private Resources res;
     private ArrayAdapter adapter1, adapter2, adapter3;
@@ -59,9 +59,6 @@ public class AgregarCarro extends AppCompatActivity {
 
 
         icajaNchasis = (TextInputLayout)findViewById(R.id.numChasis);
-        icajaMarca = (TextInputLayout)findViewById(R.id.marcaCarro);
-        icajaColor = (TextInputLayout)findViewById(R.id.colorCarro);
-        icajaModelo = (TextInputLayout)findViewById(R.id.modeloCarro);
         guardado = false;
 
         cajaNchasis.addTextChangedListener(new TextWatcherPersonalizado(icajaNchasis,getResources().getString(R.string.mensaje_error_nchasis)) {

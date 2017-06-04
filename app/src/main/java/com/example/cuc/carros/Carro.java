@@ -230,11 +230,11 @@ public class Carro {
         String sql;
 
         //Abrir la conexion de base datos en modo escritura
-        CarrosSQLiteOpenHelper  aux = new CarrosSQLiteOpenHelper(contexto,"DBPersonas",null);
+        CarrosSQLiteOpenHelper  aux = new CarrosSQLiteOpenHelper(contexto,"DBCarros",null);
         db = aux.getWritableDatabase();
 
         //insertar forma 1
-        sql = "INSERT INTO Personas values('"
+        sql = "INSERT INTO Carros values('"
                 +this.getUuid()+"','"
                 +this.getUrlfoto()+"','"
                 +this.getNchasis()+"','"

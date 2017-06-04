@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.labsoftware1.personamaterial.AgregarPersona">
+    tools:context="com.example.cuc.carros.AgregarCarro">
 
     <LinearLayout
         android:orientation="vertical"
@@ -97,6 +97,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="limpiar"
                 android:text="@string/borrar"
                 android:textSize="24sp" />
         </LinearLayout>
