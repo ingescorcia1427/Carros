@@ -6,14 +6,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.cuc.carros.R;
 import com.squareup.picasso.Picasso;
 
 public class DetalleCarro extends AppCompatActivity {
     private CollapsingToolbarLayout collapsingToolbarLayout;
+    private TextView tviewNchasis, tviewColor, tviewModelo;
     private Carro car;
-    private String marca,color, modelo, urlfoto;
+    private String nchasis, marca,color, modelo, urlfoto;
     private Bundle b;
     private Intent i;
     private ImageView foto;
@@ -27,8 +29,13 @@ public class DetalleCarro extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
+        tviewNchasis = (TextView)findViewById(R.id.txviewNchasis);
+        tviewColor = (TextView)findViewById(R.id.txviewColor);
+        tviewModelo = (TextView)findViewById(R.id.txviewModelo);
+
         i = getIntent();
         b=i.getBundleExtra("datos");
+        nchasis = b.getString("nchasis");
         marca = b.getString("marca");
         color = b.getString("color");
         modelo = b.getString("modelo");
@@ -38,6 +45,9 @@ public class DetalleCarro extends AppCompatActivity {
         foto = (ImageView)findViewById(R.id.fotoCarro);
 
         Picasso.with(getApplicationContext()).load(urlfoto).into(foto);
-        collapsingToolbarLayout.setTitle(marca+" "+modelo + "\n"+color);
+        collapsingToolbarLayout.setTitle(marca);
+        tviewNchasis.setText(getResources().getString(R.string.nchasis) + ":  " + nchasis);
+        tviewColor.setText(getResources().getString(R.string.color) + ":  " + color);
+        tviewModelo.setText(getResources().getString(R.string.modelo) + ":  " +  modelo);
     }
 }

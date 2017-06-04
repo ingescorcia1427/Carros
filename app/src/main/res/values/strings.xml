@@ -4,6 +4,8 @@
     <string name="titulo_registro">REGISTRO</string>
     <string name="nchasis">No. Chasis</string>
     <string name="marca">Marca</string>
+    <string name="color">Color</string>
+    <string name="modelo">Modelo</string>
     <string name="guardar">GUARDAR</string>
     <string name="borrar">BORRAR</string>
 
