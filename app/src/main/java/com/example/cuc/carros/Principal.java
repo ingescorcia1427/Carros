@@ -54,6 +54,7 @@ public class Principal extends AppCompatActivity implements AdaptadorCarro.OnCar
     public void onCarroClick(Carro car) {
         Intent i = new Intent(Principal.this,DetalleCarro.class);
         Bundle b = new Bundle();
+        b.putString("nchasis",car.getNchasis());
         b.putString("marca",car.getMarca());
         b.putString("color",car.getColor());
         b.putString("modelo",car.getModelo());

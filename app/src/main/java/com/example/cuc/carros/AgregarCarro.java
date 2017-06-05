@@ -44,17 +44,17 @@ public class AgregarCarro extends AppCompatActivity {
 
         opc_marca = (Spinner)findViewById(R.id.spnMarca);
         opmar = getResources().getStringArray(R.array.opcMarca);
-        adapter1 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, opmar);
+        adapter1 = new ArrayAdapter(this, R.layout.spinner_item_opciones, opmar);
         opc_marca.setAdapter(adapter1);
 
         opc_color = (Spinner)findViewById(R.id.spnColor);
         opcol = getResources().getStringArray(R.array.opcColor);
-        adapter2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, opcol);
+        adapter2 = new ArrayAdapter(this, R.layout.spinner_item_opciones, opcol);
         opc_color.setAdapter(adapter2);
 
         opc_modelo = (Spinner)findViewById(R.id.spnModelo);
         opmod =getResources().getStringArray(R.array.opcModelo);
-        adapter3 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, opmod);
+        adapter3 = new ArrayAdapter(this, R.layout.spinner_item_opciones, opmod);
         opc_modelo.setAdapter(adapter3);
 
 
@@ -107,7 +107,7 @@ public class AgregarCarro extends AppCompatActivity {
             imp.hideSoftInputFromWindow(cajaNchasis.getWindowToken(),0);
             Snackbar.make(v,getResources().getString(R.string.mensaje_exitoso_guardar),Snackbar.LENGTH_SHORT).show();
             guardado= true;
-            limpiar();
+            limpiar(v);
         }
     }
 
@@ -120,7 +120,7 @@ public class AgregarCarro extends AppCompatActivity {
         return true;
     }
 
-    public  void limpiar (){
+    public  void limpiar (View v){
         cajaNchasis.setText("");
         cajaNchasis.requestFocus();
         guardado = false;
